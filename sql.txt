@@ -1,0 +1,29 @@
+public class ContactSearch {
+    public static list<Contact> searchForContacts(string lastname, string Postalcode){
+        List<Contact> contactsFound =[select Id,Name,MailingPostalCode 
+                                      from Contact 
+                                      where LastName=:lastname and MailingPostalCode=: Postalcode];
+        return contactsFound;
+        
+    }
+}
+
+/*
+SELECT Name,Phone FROM Account
+
+SELECT Name,Phone FROM Account 
+                   WHERE (Name = 'SFDC Computing' AND NumberOfEmployees>25)
+                   ORDER BY Name
+                   LIMIT 10
+
+SELECT Name,Phone FROM Account ORDER BY Name
+
+SELECT Name,Phone FROM Account ORDER BY Name ASC
+SELECT Name,Phone FROM Account WHERE (Name='SFDC Computing' AND NumberOfEmployees>25)
+
+SELECT Name,Phone FROM Account WHERE (Name='SFDC Computing' OR (NumberOfEmployees>25 AND BillingCity='Los Angeles'))
+
+SELECT Name,Phone FROM Account WHERE Name like 'SFDC%'
+
+SELECT Name,Phone FROM Account WHERE Name='SFDC Computing'
+
